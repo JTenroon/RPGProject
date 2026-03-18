@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://xs3hkwiec83j"]
+
+[ext_resource type="Texture2D" uid="uid://mja7ec8g4ogd" path="res://Actors/Ken/Ken.png" id="1_dtxog"]
+[ext_resource type="Script" uid="uid://chr41qo4ru7px" path="res://Actors/Ken/ken.gd" id="1_mw4ul"]
+[ext_resource type="PackedScene" uid="uid://b8irpbujjaqox" path="res://Dialogue System/interactable.tscn" id="3_jx7q5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4ul"]
+size = Vector2(14, 34)
+
+[node name="Ken" type="CharacterBody2D" unique_id=1833336018 groups=["talkable"]]
+collision_layer = 3
+script = ExtResource("1_mw4ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2002829126]
+texture_filter = 1
+texture = ExtResource("1_dtxog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629610971]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_mw4ul")
+
+[node name="interactable" parent="." unique_id=1228623405 instance=ExtResource("3_jx7q5")]

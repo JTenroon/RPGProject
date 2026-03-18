@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://di1ug3dde03kt"]
+
+[ext_resource type="FontFile" uid="uid://1s2gfuwqdbir" path="res://Assets/UI/Font/Body/PIXEARG_.TTF" id="1_rn8x2"]
+[ext_resource type="Texture2D" uid="uid://nl02nf0bqsd" path="res://Assets/UI/Panel/Panel-Border.png" id="2_le4k6"]
+[ext_resource type="FontFile" uid="uid://b3brotw7ieos6" path="res://Assets/UI/Font/Body/PIXEAB__.TTF" id="3_ofxqw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bybj1"]
+texture = ExtResource("2_le4k6")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 24, 24)
+
+[resource]
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_rn8x2")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_rn8x2")
+LineEdit/fonts/font = ExtResource("1_rn8x2")
+Panel/styles/panel = SubResource("StyleBoxTexture_bybj1")
+ProgressBar/fonts/font = ExtResource("1_rn8x2")
+TabBar/fonts/font = ExtResource("1_rn8x2")
+TextEdit/fonts/font = ExtResource("1_rn8x2")
+Tree/fonts/font = ExtResource("1_rn8x2")
+Tree/fonts/title_button_font = ExtResource("3_ofxqw")

@@ -36,7 +36,7 @@ func advance() -> void:
 
 
 func _end() -> void:
-	_data.clear()
+	_data = null
 	_currentLineIndex = 0
 	GameState.exitCurrentState()
 	emit_signal("dialogueEnded")

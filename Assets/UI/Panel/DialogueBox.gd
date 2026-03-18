@@ -13,13 +13,16 @@ var _isTyping: bool = false
 
 
 func _ready() -> void:
+	print("panel is: ", _panel)
 	DialogueManager.dialogueStarted.connect(_onDialogueStarted)
 	DialogueManager.lineChanged.connect(_onLineChanged)
 	DialogueManager.dialogueEnded.connect(_onDialogueEnded)
 	_panel.hide()
 
 
-func _onDialogueStarted(firstLine: String) -> void:
+func _onDialogueStarted(speakerName: String, firstLine: String) -> void:
+	print("Do you see the text?")
+	_speakerLabel.text = speakerName
 	_panel.show()
 	_playLine(firstLine)
 
@@ -29,6 +32,7 @@ func _onLineChanged(line: String) -> void:
 
 
 func _onDialogueEnded() -> void:
+	print ("dialog's over bro ")
 	_panel.hide()
 	_dialogueLabel.text = ""
 	_speakerLabel.text = ""

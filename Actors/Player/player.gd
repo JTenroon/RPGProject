@@ -49,7 +49,7 @@ func _handleInput() -> void:
 		
 	# Input.get_vector() reads the input map and returns a normalized direction vector
 	# It automatically handles diagonal movement normalization and deadzone for analog sticks
-	if !movementDisabled:
+	if !movementDisabled and GameState.currentState == GameState.State.EXPLORE:
 		_handleDir()
 
 func _handleDir():
@@ -69,7 +69,7 @@ func _handleDir():
 func _interact() -> void:
 
 	if GameState.currentState == GameState.State.DIALOGUE:
-		var dialogueBox := get_node("/root/Main/DialogueBox")
+		var dialogueBox := get_node("/root/Node2D/MenuBox")
 		if dialogueBox._isTyping:
 			dialogueBox.skipTypewriter()
 		else:
@@ -81,7 +81,6 @@ func _interact() -> void:
 		var interactable: Node = collider.get_node_or_null("interactable")
 		if interactable:
 			interactable.interact()
-	
 
 func _applyMovement() -> void:
 
@@ -102,14 +101,11 @@ func _animate() -> void:
 		animTree["parameters/conditions/running"] = false
 		animTree["parameters/Idle/blend_position"] = _lastDir
 		
-	
-	
-	
 func _updateContext() -> void:
+
+	_pointer.target_position = _lastDir.normalized() * 25.0
 	
-	_pointer.target_position = _lastDir.normalized() * 50.0
-	
-	if _pointer.is_colliding():
+	if _pointer.is_colliding() && GameState.currentState == GameState.State.EXPLORE:
 		if _pointer.get_collider().is_in_group("talkable"):
 			talkIcon.show()
 	else:

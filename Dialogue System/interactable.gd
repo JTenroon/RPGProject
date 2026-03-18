@@ -1,8 +1,9 @@
 extends Node
 
-@export var lines: Array[String] = []
+@export var dialogueData: DialogueData
 
 func interact() -> void:
+	print("Nice interaction buddy")
 	if GameState.currentState != GameState.State.EXPLORE:
 		return
-	DialogueManager.start(lines)
+	DialogueManager.start(dialogueData)

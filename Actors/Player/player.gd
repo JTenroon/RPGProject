@@ -13,7 +13,7 @@ var _lastDir: Vector2
 
 #sets up variables for all child nodes that will be referred to throughout the player script
 var animTree: AnimationTree 
-var pointer: RayCast2D
+var _pointer: RayCast2D
 var talkIcon: Sprite2D
 var examineIcon: Sprite2D
 
@@ -21,7 +21,7 @@ var examineIcon: Sprite2D
 var _inputDirection: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	pointer = $pointer
+	_pointer = $pointer
 	talkIcon = $talkIcon
 	examineIcon = $examineIcon
 	_lastDir = Vector2.DOWN
@@ -67,7 +67,7 @@ func _handleDir():
 			_lastDir = Vector2(0, sign(_inputDirection.y))
 
 func _interact() -> void:
-	print("it's sensitive to context")
+
 	if GameState.currentState == GameState.State.DIALOGUE:
 		var dialogueBox := get_node("/root/Main/DialogueBox")
 		if dialogueBox._isTyping:
@@ -76,9 +76,9 @@ func _interact() -> void:
 			DialogueManager.advance()
 		return
 
-	if pointer.is_colliding():
-		var collider := pointer.get_collider()
-		var interactable: Node = collider.get_node_or_null("Interactable")
+	if _pointer.is_colliding():
+		var collider := _pointer.get_collider()
+		var interactable: Node = collider.get_node_or_null("interactable")
 		if interactable:
 			interactable.interact()
 	
@@ -107,10 +107,10 @@ func _animate() -> void:
 	
 func _updateContext() -> void:
 	
-	pointer.target_position = _lastDir.normalized() * 50.0
+	_pointer.target_position = _lastDir.normalized() * 50.0
 	
-	if pointer.is_colliding():
-		if pointer.get_collider().is_in_group("talkable"):
+	if _pointer.is_colliding():
+		if _pointer.get_collider().is_in_group("talkable"):
 			talkIcon.show()
 	else:
 		talkIcon.hide()

@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 # -- Stats (later these can come from a CharacterStats resource) --
-@export var moveSpeed: float = 300.0
+@export var moveSpeed: float = 500.0
 @export var HP: int = 25
 @export var ATK: int = 5
 @export var SPD: int = 5
+@export var pointerLength: float = 10.0
 
 
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	examineIcon = $examineIcon
 	_lastDir = Vector2.DOWN
 	animTree = $AnimationTree
+	_pointer.target_position = _lastDir.normalized() * pointerLength
 
 func _physics_process(delta: float) -> void:
 	_handleInput()
@@ -103,7 +105,7 @@ func _animate() -> void:
 		
 func _updateContext() -> void:
 
-	_pointer.target_position = _lastDir.normalized() * 25.0
+	_pointer.target_position = _lastDir.normalized() * pointerLength
 	
 	if _pointer.is_colliding() && GameState.currentState == GameState.State.EXPLORE:
 		if _pointer.get_collider().is_in_group("talkable"):

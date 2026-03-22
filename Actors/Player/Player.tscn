@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boh5uqms15edo" path="res://Assets/Player/MC-Sheet1.png" id="4_yqfyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
-size = Vector2(11.96875, 32.25)
+size = Vector2(11.96875, 12.125)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yqfyh"]
 animation = &"IdleU"
@@ -236,14 +236,15 @@ _data = {
 script = ExtResource("1_80rbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=288858850]
-position = Vector2(0, 8)
+position = Vector2(0, 18.0625)
 shape = SubResource("RectangleShape2D_0rwas")
 
 [node name="talkIcon" type="Sprite2D" parent="." unique_id=2081320863]
 visible = false
 z_index = 5
+y_sort_enabled = true
 texture_filter = 1
-position = Vector2(12, -16)
+position = Vector2(12, -18)
 texture = ExtResource("3_yqfyh")
 
 [node name="examineIcon" type="Sprite2D" parent="." unique_id=697867276]
@@ -254,6 +255,7 @@ position = Vector2(-12, -16)
 texture = ExtResource("4_vywg6")
 
 [node name="pointer" type="RayCast2D" parent="." unique_id=1261278707]
+position = Vector2(0, 18)
 rotation = -6.2831855
 collision_mask = 3
 

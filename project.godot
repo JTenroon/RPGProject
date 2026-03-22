@@ -33,6 +33,7 @@ window/stretch/mode="viewport"
 
 player=""
 talkable=""
+enemy="triggers encounter on collision"
 
 [input]
 

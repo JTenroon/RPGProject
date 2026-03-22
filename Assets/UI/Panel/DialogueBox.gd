@@ -8,11 +8,13 @@ extends CanvasLayer
 
 var _fullText: String = ""
 var _isTyping: bool = false
-
+var _tween: Tween
 
 
 
 func _ready() -> void:
+	
+	self.show()
 	print("panel is: ", _panel)
 	DialogueManager.dialogueStarted.connect(_onDialogueStarted)
 	DialogueManager.lineChanged.connect(_onLineChanged)
@@ -44,14 +46,17 @@ func _playLine(line: String) -> void:
 	_dialogueLabel.visible_characters = 0
 	_isTyping = true
 
-	var tween := create_tween()
-	tween.tween_property(
+	if _tween:
+		_tween.kill()
+
+	_tween = create_tween()
+	_tween.tween_property(
 		_dialogueLabel,
 		"visible_characters",
 		_fullText.length(),
 		_fullText.length() / typewriterSpeed
 	).from(0)
-	tween.finished.connect(_onTypewriterFinished)
+	_tween.finished.connect(_onTypewriterFinished)
 
 
 func _onTypewriterFinished() -> void:
@@ -59,5 +64,7 @@ func _onTypewriterFinished() -> void:
 
 
 func skipTypewriter() -> void:
+	if _tween:
+		_tween.kill()
 	_dialogueLabel.visible_characters = -1
 	_isTyping = false

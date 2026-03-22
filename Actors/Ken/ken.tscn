@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b8irpbujjaqox" path="res://Dialogue System/interactable.tscn" id="3_jx7q5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4ul"]
-size = Vector2(14, 34)
+size = Vector2(10, 12)
 
 [node name="Ken" type="CharacterBody2D" unique_id=1833336018 groups=["talkable"]]
+y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_mw4ul")
 
@@ -16,7 +17,7 @@ texture_filter = 1
 texture = ExtResource("1_dtxog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629610971]
-position = Vector2(0, 3)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_mw4ul")
 
 [node name="interactable" parent="." unique_id=1228623405 instance=ExtResource("3_jx7q5")]

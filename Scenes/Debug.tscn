@@ -7,16 +7,23 @@
 [ext_resource type="Script" uid="uid://bnmfab81hygio" path="res://Assets/UI/Panel/DialogueBox.gd" id="5_i37fb"]
 
 [node name="Node2D" type="Node2D" unique_id=1550104899]
+y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=493676502 instance=ExtResource("1_rwhvy")]
+y_sort_enabled = true
 position = Vector2(47, 115)
-moveSpeed = 75.0
+moveSpeed = 80.0
+pointerLength = 25.0
 
-[node name="Rock Lizard" parent="." unique_id=1790967525 instance=ExtResource("3_pr2ys")]
+[node name="Rock Lizard" parent="." unique_id=1790967525 groups=["enemy"] instance=ExtResource("3_pr2ys")]
+y_sort_enabled = true
 position = Vector2(226, 82)
 
 [node name="Ken" parent="." unique_id=1833336018 instance=ExtResource("2_8koso")]
+y_sort_enabled = false
 position = Vector2(95, 119)
 
 [node name="MenuBox" parent="." unique_id=757647628 instance=ExtResource("4_xmg8h")]
+visible = false
 script = ExtResource("5_i37fb")
+typewriterSpeed = 70.0

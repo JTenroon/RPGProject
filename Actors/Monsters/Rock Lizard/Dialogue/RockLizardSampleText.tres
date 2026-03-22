@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://c7midyuhinabv"]
+
+[ext_resource type="Script" uid="uid://3nceovxeds4k" path="res://Dialogue System/DialogueData.gd" id="1_84sun"]
+
+[resource]
+script = ExtResource("1_84sun")
+speakerName = "Rock Lizard"
+lines = Array[String](["It looks like it's some kind of Lizard made of rocks.", "Its eyes are all beady and is baring its claws.", "Freaky! "])
+metadata/_custom_type_script = "uid://3nceovxeds4k"

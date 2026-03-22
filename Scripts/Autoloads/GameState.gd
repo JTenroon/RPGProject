@@ -2,7 +2,7 @@
 # Autoload this first in Project Settings > Autoload, before DialogueManager.
 # Godot initializes Autoloads in order — GameState must exist before anything tries to read it.
 extends Node
-enum State { EXPLORE, DIALOGUE }
+enum State { EXPLORE, DIALOGUE, COMBAT}
 var currentState: State = State.EXPLORE
 
 # Emitted whenever the state changes, so any node can react —

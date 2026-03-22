@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 GameState="*uid://oxfmne2ly1pv"
 DialogueManager="*uid://bnv7ff47l6fnr"
+CombatManager="*uid://cgslassm4erpy"
 
 [display]
 
@@ -33,7 +34,8 @@ window/stretch/mode="viewport"
 
 player=""
 talkable=""
-enemy="triggers encounter on collision"
+enemy="triggers encounter on collision and valid combatant"
+party=""
 
 [input]
 
@@ -72,6 +74,7 @@ context={
 
 2d_physics/layer_1="Collision"
 2d_physics/layer_2="Interactable"
+2d_physics/layer_3="Enemies"
 
 [physics]
 

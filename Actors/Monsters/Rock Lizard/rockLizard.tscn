@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cw06olirlogb3"]
 
 [ext_resource type="Texture2D" uid="uid://c8xt6hsylwi5v" path="res://Actors/Monsters/Rock Lizard/Rock Lizard.png" id="1_3tyk5"]
+[ext_resource type="Script" uid="uid://dxt5ydtr8trpu" path="res://Actors/Monsters/Rock Lizard/rock_lizard.gd" id="1_jfx8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfx8l"]
 size = Vector2(47.75049, 13.999998)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tyk5"]
+radius = 69.0
+
 [node name="Rock Lizard" type="CharacterBody2D" unique_id=1790967525 groups=["enemy"]]
-collision_layer = 3
+collision_layer = 7
+script = ExtResource("1_jfx8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=814513065]
 y_sort_enabled = true
@@ -16,3 +21,9 @@ texture = ExtResource("1_3tyk5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841634471]
 position = Vector2(7.450581e-09, 19.999998)
 shape = SubResource("RectangleShape2D_jfx8l")
+
+[node name="CallRadius" type="Area2D" parent="." unique_id=1840974477]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CallRadius" unique_id=462031686]
+shape = SubResource("CircleShape2D_3tyk5")

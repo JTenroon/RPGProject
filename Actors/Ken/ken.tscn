@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4ul"]
 size = Vector2(10, 12)
 
-[node name="Ken" type="CharacterBody2D" unique_id=1833336018 groups=["talkable"]]
+[node name="Ken" type="CharacterBody2D" unique_id=1833336018 groups=["party", "talkable"]]
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_mw4ul")

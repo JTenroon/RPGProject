@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var pointerLength: float = 10.0
 
 
-
+var ATB: int
 var movementDisabled = false
 var _lastDir: Vector2
 
@@ -29,13 +29,14 @@ func _ready() -> void:
 	animTree = $AnimationTree
 	_pointer.target_position = _lastDir.normalized() * pointerLength
 
+#_physics_process is essentially the game logic's main()
 func _physics_process(delta: float) -> void:
 	_handleInput()
 	_applyMovement()
 	_animate()
 	_updateContext()
+	_checkCollision()
 	
-
 func _handleInput() -> void:
 	
 	if Input.is_action_just_pressed("disableMovement"):
@@ -82,6 +83,7 @@ func _interact() -> void:
 		var collider := _pointer.get_collider()
 		var interactable: Node = collider.get_node_or_null("interactable")
 		if interactable:
+			_inputDirection = Vector2.ZERO
 			interactable.interact()
 
 func _applyMovement() -> void:
@@ -113,3 +115,22 @@ func _updateContext() -> void:
 	else:
 		talkIcon.hide()
 		examineIcon.hide()
+
+func _checkCollision() -> void:
+	for i in get_slide_collision_count():
+		var collision : = get_slide_collision(i)
+		var collider: = collision.get_collider()
+		if collider.is_in_group("enemy"):
+			_enterCombat(collider)
+			break
+
+func _enterCombat(enemy):
+	
+	#double stating failsafe
+	if GameState.currentState != GameState.State.EXPLORE:
+		return
+	
+	#debug combat 
+	print ("Entering combat with: ", enemy.name)
+	_inputDirection = Vector2.ZERO
+	CombatManager.start(enemy)

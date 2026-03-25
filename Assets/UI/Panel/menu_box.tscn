@@ -1,17 +1,8 @@
 [gd_scene format=3 uid="uid://c76r56rcpk8vi"]
 
 [ext_resource type="Theme" uid="uid://di1ug3dde03kt" path="res://Assets/UI/UI Theme.tres" id="1_emoxn"]
+[ext_resource type="Texture2D" uid="uid://d8t4ajjmd302" path="res://Assets/UI/Panel/MenuGradient.tres" id="2_3ivmn"]
 [ext_resource type="FontFile" uid="uid://b3brotw7ieos6" path="res://Assets/UI/Font/Body/PIXEAB__.TTF" id="2_6h2br"]
-
-[sub_resource type="Gradient" id="Gradient_6h2br"]
-offsets = PackedFloat32Array(0, 0.9939759)
-colors = PackedColorArray(0.12941177, 0.25490198, 0.21568628, 1, 0, 0.49803922, 0.3764706, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ivmn"]
-gradient = SubResource("Gradient_6h2br")
-width = 24
-height = 24
-fill_from = Vector2(1, 0.8)
 
 [node name="MenuBox" type="CanvasLayer" unique_id=757647628]
 
@@ -21,9 +12,8 @@ anchor_right = 1.0
 offset_left = 64.0
 offset_top = 4.0
 offset_right = -4.0
-offset_bottom = 76.0
+offset_bottom = 66.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 0
 theme = ExtResource("1_emoxn")
 
@@ -38,7 +28,7 @@ offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_3ivmn")
+texture = ExtResource("2_3ivmn")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -50,7 +40,7 @@ anchor_bottom = 1.0
 offset_left = 6.0
 offset_top = 6.0
 offset_right = -6.0
-offset_bottom = -54.0
+offset_bottom = -45.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_6h2br")
 theme_override_font_sizes/font_size = 8

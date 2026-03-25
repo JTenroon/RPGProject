@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://lm1bwy37i2cx"]
+
+[ext_resource type="Theme" uid="uid://di1ug3dde03kt" path="res://Assets/UI/UI Theme.tres" id="1_itcic"]
+[ext_resource type="Texture2D" uid="uid://d8t4ajjmd302" path="res://Assets/UI/Panel/MenuGradient.tres" id="2_5j8ba"]
+
+[sub_resource type="Theme" id="Theme_w4d7g"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=880112667]
+
+[node name="Main Menu" type="Panel" parent="." unique_id=2013841321]
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.011111111
+anchor_right = 0.990625
+anchor_bottom = 0.6111111
+theme = ExtResource("1_itcic")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu" unique_id=289504949]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+texture = ExtResource("2_5j8ba")
+
+[node name="Button" type="Button" parent="Main Menu" unique_id=352802554]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 70.0
+offset_bottom = 22.0
+theme = SubResource("Theme_w4d7g")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "Equip"
+alignment = 0

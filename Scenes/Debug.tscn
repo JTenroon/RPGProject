@@ -11,13 +11,13 @@ y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=493676502 instance=ExtResource("1_rwhvy")]
 y_sort_enabled = true
-position = Vector2(43, 115)
+position = Vector2(47, 117)
 moveSpeed = 80.0
 pointerLength = 25.0
 
 [node name="Rock Lizard" parent="." unique_id=1790967525 instance=ExtResource("3_pr2ys")]
 y_sort_enabled = true
-position = Vector2(226, 87)
+position = Vector2(205, 63)
 
 [node name="Ken" parent="." unique_id=1833336018 instance=ExtResource("2_8koso")]
 y_sort_enabled = false
@@ -29,4 +29,4 @@ script = ExtResource("5_i37fb")
 typewriterSpeed = 70.0
 
 [node name="Rock Lizard2" parent="." unique_id=2049332055 instance=ExtResource("3_pr2ys")]
-position = Vector2(291, 115)
+position = Vector2(259, 88)

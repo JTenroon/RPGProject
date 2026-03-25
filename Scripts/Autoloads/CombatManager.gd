@@ -4,6 +4,8 @@ extends Node
 var combatants: Array [CharacterBody2D]
 var enemies: Array [CharacterBody2D]
 
+signal combatStarted
+
 func start(starter: CharacterBody2D) -> void:
 	
 	GameState.enterState(GameState.State.COMBAT)
@@ -13,6 +15,7 @@ func start(starter: CharacterBody2D) -> void:
 	_getParty()
 	_addEnemies()
 	_printCombatants()
+	emit_signal("combatStarted")
 
 
 func _aggroEnemies(starter: CharacterBody2D) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kwpsmxrodpfa"
-path="res://.godot/imported/ManaBar.png-8943517ee980a0c3673feba57432a1f4.ctex"
+uid="uid://6fbhtr1nxn3e"
+path="res://.godot/imported/PartyProfileAlt.png-fcf3464fdcc224f145f140743879e363.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Combat/ManaBar.png"
-dest_files=["res://.godot/imported/ManaBar.png-8943517ee980a0c3673feba57432a1f4.ctex"]
+source_file="res://Assets/UI/Combat/Profile/PartyProfileAlt.png"
+dest_files=["res://.godot/imported/PartyProfileAlt.png-fcf3464fdcc224f145f140743879e363.ctex"]
 
 [params]
 

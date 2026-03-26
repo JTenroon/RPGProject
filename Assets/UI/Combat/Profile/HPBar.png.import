@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b38kjb561xy58"
-path="res://.godot/imported/BarBG.png-476d053b3e89a2376e7f15ec049d5424.ctex"
+uid="uid://dhr2yi21md6ta"
+path="res://.godot/imported/HPBar.png-b54649fdebbb8d653ea0183b2bfadc54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Combat/BarBG.png"
-dest_files=["res://.godot/imported/BarBG.png-476d053b3e89a2376e7f15ec049d5424.ctex"]
+source_file="res://Assets/UI/Combat/Profile/HPBar.png"
+dest_files=["res://.godot/imported/HPBar.png-b54649fdebbb8d653ea0183b2bfadc54.ctex"]
 
 [params]
 

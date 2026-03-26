@@ -1,10 +1,11 @@
 extends Node
 
 @onready var aggroed: CharacterBody2D = null
+var party: Array [CharacterBody2D]
 var combatants: Array [CharacterBody2D]
 var enemies: Array [CharacterBody2D]
 
-signal combatStarted
+signal combatStarted(party:Array[CharacterBody2D])
 
 func start(starter: CharacterBody2D) -> void:
 	
@@ -13,9 +14,9 @@ func start(starter: CharacterBody2D) -> void:
 	aggroed = starter
 	_aggroEnemies(aggroed)
 	_getParty()
-	_addEnemies()
+	_concatenate()
 	_printCombatants()
-	emit_signal("combatStarted")
+	emit_signal("combatStarted", party)
 
 
 func _aggroEnemies(starter: CharacterBody2D) -> void:
@@ -27,10 +28,14 @@ func _aggroEnemies(starter: CharacterBody2D) -> void:
 			enemies.append(body)
 
 func _getParty():
+	for members in get_tree().get_nodes_in_group("player"):
+		party.append(members)
 	for members in get_tree().get_nodes_in_group("party"):
-		combatants.append(members)
+		party.append(members)
 
-func _addEnemies():
+func _concatenate():
+	for members in party:
+		combatants.append(members)
 	for enemy in enemies:
 		combatants.append(enemy)
 

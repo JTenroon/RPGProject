@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var SPD: int = 5
 @export var pointerLength: float = 10.0
 
+@onready var currentHP: int = maxHP
 @onready var combatUI: Control = $partyCombatUI
 
 var ATB: int

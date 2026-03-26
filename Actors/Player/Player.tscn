@@ -233,7 +233,7 @@ _data = {
 &"RunU": SubResource("Animation_7m1i7")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=493676502 groups=["party", "player"]]
+[node name="Player" type="CharacterBody2D" unique_id=493676502 groups=["player"]]
 script = ExtResource("1_80rbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=288858850]
@@ -293,8 +293,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -9.76923
-offset_top = 15.0
+offset_top = 20.0
 offset_right = 10.301121
-offset_bottom = 35.35251
+offset_bottom = 40.35251
 grow_horizontal = 2
 grow_vertical = 0

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ux7og")
 speakerName = "Kenny"
-lines = Array[String](["HI HONEY I LOVE YOU", "I HOPE YOU HAVE A GOOD DAY", "NOW LETS SEE HOW WELL THIS BITCH HANDLES LINE OVERFLOW AAAAAAAAAAAAAAAAAAAAAAA"])
+lines = Array[String](["HI HONEY I LOVE YOU", "I hope you have a good day!!", "NOW LETS SEE HOW WELL THIS BITCH HANDLES LINE OVERFLOW AAAAAAAAAAAAAAAAAAAAAAA"])
 metadata/_custom_type_script = "uid://3nceovxeds4k"

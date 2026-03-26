@@ -2,7 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://di1ug3dde03kt" path="res://Assets/UI/UI Theme.tres" id="1_emoxn"]
 [ext_resource type="Texture2D" uid="uid://d8t4ajjmd302" path="res://Assets/UI/Panel/MenuGradient.tres" id="2_3ivmn"]
-[ext_resource type="FontFile" uid="uid://b3brotw7ieos6" path="res://Assets/UI/Font/Body/PIXEAB__.TTF" id="2_6h2br"]
+[ext_resource type="FontFile" uid="uid://mdxarse7lj64" path="res://Assets/UI/Font/Body/pcsenior.ttf" id="3_3ivmn"]
+[ext_resource type="FontFile" uid="uid://dtam76y7sdc61" path="res://Assets/UI/Font/Header/Alkhemikal.ttf" id="3_im5n0"]
 
 [node name="MenuBox" type="CanvasLayer" unique_id=757647628]
 
@@ -39,11 +40,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
 offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -45.0
+offset_right = -20.0
+offset_bottom = -40.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_6h2br")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("1_emoxn")
+theme_override_fonts/font = ExtResource("3_im5n0")
+theme_override_font_sizes/font_size = 16
 
 [node name="BodyText" type="Label" parent="Panel" unique_id=617056642]
 layout_mode = 1
@@ -51,8 +53,9 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -10.0
+offset_top = 25.0
+offset_right = -6.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("3_3ivmn")
 theme_override_font_sizes/font_size = 8
 autowrap_mode = 2

@@ -1,12 +1,11 @@
-extends CharacterBody2D
+extends Combatant
 
 # -- Stats (later these can come from a CharacterStats resource) --
 @export var moveSpeed: float = 500.0
 @export var pointerLength: float = 10.0
-@export var stats: characterStats
+
 @onready var combatUI: Control = $partyCombatUI
 
-var ATB: int
 var movementDisabled = false
 var _lastDir: Vector2
 
@@ -23,6 +22,8 @@ func _ready() -> void:
 	
 	stats.calculate()
 	stats.printAllStats()
+	
+	_setupHP()
 	
 	combatUI.hide()
 	_pointer = $pointer
@@ -137,3 +138,7 @@ func _enterCombat(enemy):
 	print ("Entering combat with: ", enemy.name)
 	_inputDirection = Vector2.ZERO
 	CombatManager.start(enemy)
+
+func _setupHP() -> void:
+	currentHP = stats.currentMaxHP
+	currentMP = stats.currentMaxHP

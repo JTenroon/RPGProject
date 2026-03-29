@@ -25,19 +25,19 @@ var MDEF: int
 
 func calculate() -> void:
 	
-	currentMaxHP = calculateHPMP(baseMaxHP, level)
-	currentMaxMP = calculateHPMP(baseMaxMP, level)
+	currentMaxHP = calculateHPMP(baseMaxHP)
+	currentMaxMP = calculateHPMP(baseMaxMP)
 	
-	ATK = calculateStat(baseATK, level)
-	SPD = calculateStat(baseSPD, level)
-	DEF = calculateStat(baseDEF,level)
-	MAG = calculateStat(baseMAG,level)
-	MDEF = calculateStat(baseMDEF, level)
+	ATK = calculateStat(baseATK)
+	SPD = calculateStat(baseSPD)
+	DEF = calculateStat(baseDEF)
+	MAG = calculateStat(baseMAG)
+	MDEF = calculateStat(baseMDEF)
 	
-func calculateHPMP(stat: int, level: int) -> int:
+func calculateHPMP(stat: int) -> int:
 	return ((2*stat*level)/100) + 10 + level
 
-func calculateStat(stat,level) -> int:
+func calculateStat(stat) -> int:
 	return ((2*stat*level)/100) + 5	
 
 func printAllStats() -> void:

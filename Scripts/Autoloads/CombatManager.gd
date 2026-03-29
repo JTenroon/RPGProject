@@ -4,6 +4,8 @@ extends Node
 var _party: Array [CharacterBody2D]
 var _combatants: Array [CharacterBody2D]
 var _enemies: Array [CharacterBody2D]
+var queue: Array [int]
+
 
 signal combatStarted(party:Array[CharacterBody2D])
 
@@ -18,6 +20,9 @@ func start(starter: CharacterBody2D) -> void:
 	_printCombatants()
 	emit_signal("combatStarted", _party)
 
+func _physics_process(delta: float) -> void:
+	_tick()
+	_executeQueue()
 
 func _aggroEnemies(starter: CharacterBody2D) -> void:
 	
@@ -42,3 +47,16 @@ func _concatenate():
 func _printCombatants():
 	for fighter in _combatants:
 		print(fighter.name)
+
+func _tick() -> void:
+	for entity in _combatants:
+		entity.addATB()
+
+func _executeQueue() -> void:
+	if queue:
+		for action in queue:
+			print(queue)
+			queue.erase(action)
+
+func addToQueue(action: int) -> void:
+	queue.append(action)

@@ -1,12 +1,3 @@
-extends CharacterBody2D
+extends Combatant
 
 @export var charName: String = "Ken"
-@export var stats: characterStats
-
-
-var ATB: int
-
-func _ready() -> void:
-	stats.calculate()
-	stats.printAllStats()
-	

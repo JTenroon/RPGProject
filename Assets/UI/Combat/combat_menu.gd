@@ -9,14 +9,14 @@ func _ready() -> void:
 	GameState.stateChanged.connect(_onStateChange)
 
 func _onCombatStarted(party: Array[CharacterBody2D]):
-	for child in _partyBox.get_children():
-		child.queue_free()
 
+	self.show()
 	for member in party:
 		var profile = PartyProfile.instantiate() 
 		
 		_partyBox.add_child(profile)
 		profile.init(member)
 
-func _onStateChange():
-	pass
+func _onStateChange(newState: GameState.State) -> void:
+	for child in _partyBox.get_children():
+		child.queue_free()

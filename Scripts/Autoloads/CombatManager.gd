@@ -1,9 +1,9 @@
 extends Node
 
 @onready var aggroed: CharacterBody2D = null
-var party: Array [CharacterBody2D]
-var combatants: Array [CharacterBody2D]
-var enemies: Array [CharacterBody2D]
+var _party: Array [CharacterBody2D]
+var _combatants: Array [CharacterBody2D]
+var _enemies: Array [CharacterBody2D]
 
 signal combatStarted(party:Array[CharacterBody2D])
 
@@ -16,7 +16,7 @@ func start(starter: CharacterBody2D) -> void:
 	_getParty()
 	_concatenate()
 	_printCombatants()
-	emit_signal("combatStarted", party)
+	emit_signal("combatStarted", _party)
 
 
 func _aggroEnemies(starter: CharacterBody2D) -> void:
@@ -25,20 +25,20 @@ func _aggroEnemies(starter: CharacterBody2D) -> void:
 	
 	for body in callRadius.get_overlapping_bodies():
 		if body.is_in_group("enemy"):
-			enemies.append(body)
+			_enemies.append(body)
 
 func _getParty():
 	for members in get_tree().get_nodes_in_group("player"):
-		party.append(members)
+		_party.append(members)
 	for members in get_tree().get_nodes_in_group("party"):
-		party.append(members)
+		_party.append(members)
 
 func _concatenate():
-	for members in party:
-		combatants.append(members)
-	for enemy in enemies:
-		combatants.append(enemy)
+	for members in _party:
+		_combatants.append(members)
+	for enemy in _enemies:
+		_combatants.append(enemy)
 
 func _printCombatants():
-	for fighter in combatants:
+	for fighter in _combatants:
 		print(fighter.name)

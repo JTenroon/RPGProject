@@ -33,4 +33,3 @@ typewriterSpeed = 70.0
 position = Vector2(278, 145)
 
 [node name="CombatMenu" parent="." unique_id=1055183837 instance=ExtResource("6_i37fb")]
-visible = false

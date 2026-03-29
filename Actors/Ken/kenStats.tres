@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="characterStats" format=3 uid="uid://xhw7uv55q84h"]
+
+[ext_resource type="Script" uid="uid://cvlovrbuuyr52" path="res://Combat System/Stats.gd" id="1_o8p7v"]
+
+[resource]
+script = ExtResource("1_o8p7v")
+baseMaxHP = 175
+baseMaxMP = 150
+baseATK = 75
+baseSPD = 100
+baseDEF = 80
+baseMAG = 120
+baseMDEF = 130
+level = 2
+metadata/_custom_type_script = "uid://cvlovrbuuyr52"

@@ -2,12 +2,8 @@ extends CharacterBody2D
 
 # -- Stats (later these can come from a CharacterStats resource) --
 @export var moveSpeed: float = 500.0
-@export var maxHP: int = 25
-@export var ATK: int = 5
-@export var SPD: int = 5
 @export var pointerLength: float = 10.0
-
-@onready var currentHP: int = maxHP
+@export var stats: characterStats
 @onready var combatUI: Control = $partyCombatUI
 
 var ATB: int
@@ -24,6 +20,9 @@ var examineIcon: Sprite2D
 var _inputDirection: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	
+	stats.calculate()
+	stats.printAllStats()
 	
 	combatUI.hide()
 	_pointer = $pointer

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://mja7ec8g4ogd" path="res://Actors/Ken/Ken.png" id="1_dtxog"]
 [ext_resource type="Script" uid="uid://chr41qo4ru7px" path="res://Actors/Ken/ken.gd" id="1_mw4ul"]
+[ext_resource type="Resource" uid="uid://xhw7uv55q84h" path="res://Actors/Ken/kenStats.tres" id="2_g62vv"]
 [ext_resource type="PackedScene" uid="uid://b8irpbujjaqox" path="res://Dialogue System/interactable.tscn" id="3_jx7q5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4ul"]
@@ -11,6 +12,7 @@ size = Vector2(10, 12)
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_mw4ul")
+stats = ExtResource("2_g62vv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2002829126]
 texture_filter = 1

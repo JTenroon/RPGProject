@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="characterStats" format=3 uid="uid://bkojsmyhou6bc"]
 
-[ext_resource type="Script" uid="uid://cvlovrbuuyr52" path="res://Combat System/Stats.gd" id="1_quhin"]
+[ext_resource type="Script" uid="uid://cvlovrbuuyr52" path="res://Combat System/CombatActors/Stats.gd" id="1_quhin"]
 
 [resource]
 script = ExtResource("1_quhin")
@@ -9,4 +9,5 @@ baseATK = 200
 baseSPD = 75
 baseDEF = 200
 baseMDEF = 25
+level = 3
 metadata/_custom_type_script = "uid://cvlovrbuuyr52"

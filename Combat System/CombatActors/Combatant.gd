@@ -20,10 +20,10 @@ func addATB() -> void:
 		ATB = 0
 
 	elif ATB < ATBMax:
-		ATB += stats.SPD
+		ATB += stats.SPDd
 		
-
 func _chooseAction() -> void:
-	var action: int = 2
-	CombatManager.addToQueue(action)
 	pass
+	
+func takeDamage(damage: int) -> void:
+	currentHP -= damage

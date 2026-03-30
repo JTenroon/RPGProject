@@ -18,7 +18,7 @@ pointerLength = 25.0
 
 [node name="Rock Lizard" parent="." unique_id=1790967525 instance=ExtResource("3_pr2ys")]
 y_sort_enabled = true
-position = Vector2(205, 63)
+position = Vector2(243, 66)
 
 [node name="Ken" parent="." unique_id=1833336018 instance=ExtResource("2_8koso")]
 y_sort_enabled = false
@@ -28,8 +28,5 @@ position = Vector2(95, 119)
 visible = false
 script = ExtResource("5_i37fb")
 typewriterSpeed = 70.0
-
-[node name="Rock Lizard2" parent="." unique_id=2049332055 instance=ExtResource("3_pr2ys")]
-position = Vector2(278, 145)
 
 [node name="CombatMenu" parent="." unique_id=1055183837 instance=ExtResource("6_i37fb")]

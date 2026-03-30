@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AIMoveset" format=3 uid="uid://qyu2tskjltn0"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_5twsf"]
+[ext_resource type="Script" uid="uid://c2828rynqp2pv" path="res://Combat System/Combat Actions/AIMoveset.gd" id="2_3lhlu"]
+[ext_resource type="Resource" uid="uid://bxiy6jarxa1jd" path="res://Assets/Monsters/Monster Abilities/Sweep.tres" id="2_nppyy"]
+[ext_resource type="Resource" uid="uid://cgtnh0ptmbke3" path="res://Assets/Monsters/Monster Abilities/Scratch.tres" id="3_flbol"]
+
+[resource]
+script = ExtResource("2_3lhlu")
+abilities = Array[ExtResource("1_5twsf")]([ExtResource("2_nppyy"), ExtResource("3_flbol")])
+metadata/_custom_type_script = "uid://c2828rynqp2pv"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bxiy6jarxa1jd"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_rus3g"]
+
+[resource]
+script = ExtResource("1_rus3g")
+actionName = "Sweep"
+damage = 10
+animation = 3
+multiTarget = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

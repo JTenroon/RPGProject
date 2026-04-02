@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8irpbujjaqox"]
 
 [ext_resource type="Script" uid="uid://c7girokin3j0r" path="res://Dialogue System/interactable.gd" id="1_2iywl"]
-[ext_resource type="Resource" uid="uid://da0b7qoxjhy7n" path="res://Actors/Ken/Dialogue/KenSampleDialogue.tres" id="2_6qt4k"]
+[ext_resource type="Resource" uid="uid://da0b7qoxjhy7n" path="res://Actors/Ken/Assets/Dialogue/KenSampleDialogue.tres" id="2_6qt4k"]
 
 [node name="interactable" type="Node" unique_id=1228623405]
 script = ExtResource("1_2iywl")

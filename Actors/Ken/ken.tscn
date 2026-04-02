@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://chr41qo4ru7px" path="res://Actors/Ken/ken.gd" id="1_mw4ul"]
 [ext_resource type="Resource" uid="uid://xhw7uv55q84h" path="res://Actors/Ken/kenStats.tres" id="2_g62vv"]
 [ext_resource type="PackedScene" uid="uid://b8irpbujjaqox" path="res://Dialogue System/interactable.tscn" id="3_jx7q5"]
+[ext_resource type="PackedScene" uid="uid://bvfjfwxq6v61d" path="res://Assets/UI/Combat/party_combat_ui.tscn" id="5_nr775"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4ul"]
 size = Vector2(10, 12)
@@ -23,3 +24,5 @@ position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_mw4ul")
 
 [node name="interactable" parent="." unique_id=1228623405 instance=ExtResource("3_jx7q5")]
+
+[node name="partyCombatUI" parent="." unique_id=746529709 instance=ExtResource("5_nr775")]

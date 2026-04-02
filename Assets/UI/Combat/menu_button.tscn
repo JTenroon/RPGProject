@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ce056yapp2cer"]
+
+[ext_resource type="Texture2D" uid="uid://x1useo6s7cob" path="res://Assets/UI/Combat/Combat Menu/CombatActionButton.png" id="1_3p288"]
+[ext_resource type="Script" uid="uid://cfvq7irqs7hxw" path="res://Assets/UI/Combat/menuButton.gd" id="2_4fxod"]
+
+[node name="Menu_Button" type="TextureRect" unique_id=847766963]
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 10.070351
+offset_bottom = 11.070351
+texture = ExtResource("1_3p288")
+script = ExtResource("2_4fxod")
+
+[node name="icon" type="TextureRect" parent="." unique_id=212990764]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99649477
+anchor_bottom = 0.99649477
+metadata/_edit_use_anchors_ = true

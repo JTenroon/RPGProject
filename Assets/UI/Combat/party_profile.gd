@@ -1,3 +1,4 @@
+class_name partyProfile
 extends TextureRect
 
 @onready var HPBar: TextureProgressBar = $"HP Bar"
@@ -14,7 +15,7 @@ func _ready():
 	HPBar.value = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func init (member : CharacterBody2D):
+func init (member : Combatant) -> void:
 	
 	HPBar.max_value = member.stats.currentMaxHP
 	MPBar.max_value = member.stats.currentMaxMP
@@ -22,4 +23,12 @@ func init (member : CharacterBody2D):
 	HPBar.value = member.currentHP
 	MPBar.value = member.currentMP
 	
+	HPCount.text = str(member.currentHP)
+	MPCount.text = str(member.currentMP)
+
+func update (member: Combatant) -> void:
+	HPBar.value = member.currentHP
+	MPBar.value = member.currentMP
 	
+	HPCount.text = str(member.currentHP)
+	MPCount.text = str(member.currentMP)

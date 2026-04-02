@@ -1,1 +1,1 @@
-extends Combatant
+extends AIControlled

@@ -4,8 +4,8 @@
 [ext_resource type="Resource" uid="uid://c1t0fhf67of1q" path="res://Actors/Player/playerStats.tres" id="2_l6vkj"]
 [ext_resource type="Texture2D" uid="uid://bob5lnd1quun" path="res://Assets/Icons/talk.png" id="3_yqfyh"]
 [ext_resource type="Texture2D" uid="uid://cof81p4xlihqe" path="res://Assets/Icons/examine.png" id="4_vywg6"]
-[ext_resource type="Texture2D" uid="uid://boh5uqms15edo" path="res://Assets/Player/MC-Sheet1.png" id="4_yqfyh"]
-[ext_resource type="PackedScene" uid="uid://5fk63jlydd01" path="res://Assets/UI/Combat/ATBall/at_ball.tscn" id="5_vywg6"]
+[ext_resource type="Texture2D" uid="uid://boh5uqms15edo" path="res://Actors/Player/Assets/MC-Sheet1.png" id="4_yqfyh"]
+[ext_resource type="PackedScene" uid="uid://bvfjfwxq6v61d" path="res://Assets/UI/Combat/party_combat_ui.tscn" id="6_l6vkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(11.96875, 12.125)
@@ -278,25 +278,4 @@ parameters/Run/blend_position = Vector2(-0.087308705, -0.5350554)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=659264443]
 libraries/ = SubResource("AnimationLibrary_yw7as")
 
-[node name="partyCombatUI" type="Control" parent="." unique_id=608109485]
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_left = -31.0
-offset_top = -28.0
-offset_right = 30.53846
-offset_bottom = 32.0
-
-[node name="ATBall" parent="partyCombatUI" unique_id=204484381 instance=ExtResource("5_vywg6")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -9.76923
-offset_top = 20.0
-offset_right = 10.301121
-offset_bottom = 40.35251
-grow_horizontal = 2
-grow_vertical = 0
+[node name="partyCombatUI" parent="." unique_id=746529709 instance=ExtResource("6_l6vkj")]

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bvfjfwxq6v61d"]
+
+[ext_resource type="Script" uid="uid://tb7owlretqo5" path="res://Assets/UI/Combat/party_combat_ui.gd" id="1_122c0"]
+[ext_resource type="PackedScene" uid="uid://5fk63jlydd01" path="res://Assets/UI/Combat/ATBall/at_ball.tscn" id="1_l2mpj"]
+[ext_resource type="PackedScene" uid="uid://ce056yapp2cer" path="res://Assets/UI/Combat/menu_button.tscn" id="3_vvp6r"]
+[ext_resource type="Texture2D" uid="uid://d2kwareae666v" path="res://Assets/UI/Combat/Combat Menu/Defend.png" id="4_4sij8"]
+
+[node name="partyCombatUI" type="Control" unique_id=746529709]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -28.0
+offset_right = 30.53846
+offset_bottom = 32.0
+script = ExtResource("1_122c0")
+
+[node name="ATBall" parent="." unique_id=204484381 instance=ExtResource("1_l2mpj")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.76923
+offset_top = 15.0
+offset_right = 10.301121
+offset_bottom = 35.35251
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Menu_Button" parent="." unique_id=847766963 instance=ExtResource("3_vvp6r")]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 18.0
+offset_right = 71.07035
+offset_bottom = 38.07035
+icon = ExtResource("4_4sij8")

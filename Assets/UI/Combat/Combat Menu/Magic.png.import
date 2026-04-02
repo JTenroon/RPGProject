@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boh5uqms15edo"
-path="res://.godot/imported/MC-Sheet1.png-ec86abef72858bc3dc5d226b7637e9ca.ctex"
+uid="uid://ddxs2gia1jc6u"
+path="res://.godot/imported/Magic.png-d4ef91feab7f2e29849027394adce455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/MC-Sheet1.png"
-dest_files=["res://.godot/imported/MC-Sheet1.png-ec86abef72858bc3dc5d226b7637e9ca.ctex"]
+source_file="res://Assets/UI/Combat/Combat Menu/Magic.png"
+dest_files=["res://.godot/imported/Magic.png-d4ef91feab7f2e29849027394adce455.ctex"]
 
 [params]
 

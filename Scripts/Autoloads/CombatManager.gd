@@ -6,8 +6,11 @@ var _combatants: Array [Combatant]
 var _enemies: Array [Combatant]
 var queue: Array [combatAction]
 
+var _partyScore: int
+var _enemyScore: int
 
-signal combatStarted(party:Array[CharacterBody2D])
+signal combatStarted(party:Array[Combatant])
+signal updateUI(party:Array[Combatant])
 
 func start(starter: CharacterBody2D) -> void:
 	
@@ -19,10 +22,12 @@ func start(starter: CharacterBody2D) -> void:
 	_concatenate()
 	_printCombatants()
 	emit_signal("combatStarted", _party)
+	
 
 func _physics_process(delta: float) -> void:
-	_tick()
-	_executeQueue()
+	if GameState.currentState == GameState.State.COMBAT:
+		_tick()
+		_executeQueue()
 
 func _aggroEnemies(starter: CharacterBody2D) -> void:
 	
@@ -49,25 +54,41 @@ func _printCombatants():
 		print(fighter.name)
 
 func _tick() -> void:
-	for entity in _combatants:
-		entity.addATB()
+	for fighter in _combatants:
+		fighter.addATB()
 
 func _executeQueue() -> void:
-	if queue:
-		for action in queue:
-			_resolveAction(action)
+	while queue.size() > 0:
+		var action = queue.pop_front()
+		_resolveAction(action)
 
 func _resolveAction(action : combatAction) -> void:
+	
+	print(action.user.name, " used ", action.ability.actionName," against ", action.target.name,"!")
+	
 	if action.ability.multiTarget:
 		if action.user is AIControlled:
 			for member in _party:
-				action.applyDamage(action.user, member,action.ability.power)
+				action.target = member
+				applyDamage(action)
 		if action.user is playerControlled:
 			for enemy in _enemies:
-				action.applyDamage(action.user,enemy,action.ability.power)
+				applyDamage(action)
 	else:
 		applyDamage(action)
-		
+
+func _updateUI() -> void:
+	emit_signal("updateUI", _party)
+
+func _victory() -> void:
+	print ("You win!!!!!1")
+	GameState.exitCurrentState()
+
+func _gameOver() -> void:
+	print("GameOVER!!!!!!11")
+	GameState.exitCurrentState()
+
+#PUBLIC
 func applyDamage(action: combatAction) -> void:
 	
 	var atk: float
@@ -80,10 +101,27 @@ func applyDamage(action: combatAction) -> void:
 		atk = action.user.stats.ATK
 		def = action.target.stats.DEF 
 	
-	var rawDamage: float = (atk/pow(2.0,def/atk))*(1.0 + (float(action.ability.power)/100.0)) 
+	var rawDamage: float = (atk/pow(2.0,def/atk))*(1.0 * (float(action.ability.power)/100.0)) 
 	var damage: int = int(rawDamage)
 	
+	print("It did ", damage, " damage!")
 	action.target.takeDamage(damage)	
-	
-func addToQueue(action: int) -> void:
+	_updateUI()
+
+func addToQueue(action: combatAction) -> void:
 	queue.append(action)
+
+func checkScore() -> void:
+	var aliveEnemies = _enemies.filter(func(e): return !e.isDead)
+	var aliveParty = _party.filter(func(p): return !p.isDead)
+	
+	if aliveEnemies.size() == 0:
+		_victory()
+	elif aliveParty.size() == 0:
+		_gameOver()
+
+func getParty() -> Array[Combatant]:
+	return _party
+
+func getEnemies() -> Array[Combatant]:
+	return _enemies

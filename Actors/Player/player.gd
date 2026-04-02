@@ -4,8 +4,6 @@ extends Combatant
 @export var moveSpeed: float = 500.0
 @export var pointerLength: float = 10.0
 
-@onready var combatUI: Control = $partyCombatUI
-
 var movementDisabled = false
 var _lastDir: Vector2
 
@@ -20,12 +18,8 @@ var _inputDirection: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	
-	stats.calculate()
-	stats.printAllStats()
+	super()
 	
-	_setupHP()
-	
-	combatUI.hide()
 	_pointer = $pointer
 	talkIcon = $talkIcon
 	examineIcon = $examineIcon
@@ -36,28 +30,20 @@ func _ready() -> void:
 #_physics_process is essentially the game logic's main()
 func _physics_process(delta: float) -> void:
 	_handleInput()
-	_applyMovement()
 	_animate()
 	_updateContext()
 	_checkCollision()
 	
 func _handleInput() -> void:
 	
-	if Input.is_action_just_pressed("disableMovement"):
-		if !movementDisabled:
-			movementDisabled = true
-			print("movement disabled")
-		else:
-			movementDisabled = false
-			print("movement enabled") 
-			
 	if Input.is_action_just_pressed("context"):
-		_interact()
-		
+			_interact()
 	# Input.get_vector() reads the input map and returns a normalized direction vector
 	# It automatically handles diagonal movement normalization and deadzone for analog sticks
-	if !movementDisabled and GameState.currentState == GameState.State.EXPLORE:
+	if GameState.currentState == GameState.State.EXPLORE:
 		_handleDir()
+		_applyMovement()
+
 
 func _handleDir():
 	
@@ -138,7 +124,3 @@ func _enterCombat(enemy):
 	print ("Entering combat with: ", enemy.name)
 	_inputDirection = Vector2.ZERO
 	CombatManager.start(enemy)
-
-func _setupHP() -> void:
-	currentHP = stats.currentMaxHP
-	currentMP = stats.currentMaxHP

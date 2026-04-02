@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_rus3g")
 actionName = "Sweep"
-damage = 10
+power = 35
 animation = 3
 multiTarget = true
 metadata/_custom_type_script = "uid://dby8cq5f32nhm"

@@ -7,5 +7,5 @@
 
 [resource]
 script = ExtResource("2_3lhlu")
-abilities = Array[ExtResource("1_5twsf")]([ExtResource("2_nppyy"), ExtResource("3_flbol")])
+list = Array[ExtResource("1_5twsf")]([ExtResource("3_flbol"), ExtResource("2_nppyy")])
 metadata/_custom_type_script = "uid://c2828rynqp2pv"

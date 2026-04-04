@@ -1,4 +1,4 @@
-extends Combatant
+extends playerControlled
 
 # -- Stats (later these can come from a CharacterStats resource) --
 @export var moveSpeed: float = 500.0
@@ -33,7 +33,10 @@ func _physics_process(delta: float) -> void:
 	_animate()
 	_updateContext()
 	_checkCollision()
-	
+
+func _input(event: InputEvent) -> void:
+	pass
+
 func _handleInput() -> void:
 	
 	if Input.is_action_just_pressed("context"):
@@ -43,7 +46,6 @@ func _handleInput() -> void:
 	if GameState.currentState == GameState.State.EXPLORE:
 		_handleDir()
 		_applyMovement()
-
 
 func _handleDir():
 	

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bufywhlv17pfn"]
+
+[ext_resource type="Texture2D" uid="uid://dkj1pmycl1uhq" path="res://Actors/Player/Assets/AbilityIcons/MCSlash.png" id="1_wrtwd"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_x5v27"]
+
+[resource]
+script = ExtResource("1_x5v27")
+actionName = "Slash"
+icon = ExtResource("1_wrtwd")
+power = 50
+speed = 1.0
+animation = 2
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

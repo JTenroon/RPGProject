@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5fk63jlydd01"]
 
-[ext_resource type="Texture2D" uid="uid://cbbehyauocyi2" path="res://Assets/UI/Combat/ATBall/ATBBallBG.png" id="1_ekym0"]
+[ext_resource type="Texture2D" uid="uid://x1useo6s7cob" path="res://Assets/UI/Combat/Combat Menu/CombatActionButton.png" id="1_ekym0"]
 [ext_resource type="Texture2D" uid="uid://bmhrppdow3j1g" path="res://Assets/UI/Combat/ATBall/ATBBallForeground.png" id="2_xgppn"]
 [ext_resource type="Texture2D" uid="uid://cwqx30gedg3hh" path="res://Assets/UI/Combat/ATBall/ATBBallMeter.png" id="3_0ucem"]
 

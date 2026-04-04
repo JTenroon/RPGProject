@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bgb6hheprsxuj"]
+
+[ext_resource type="Texture2D" uid="uid://b7tuih48jeb0y" path="res://Actors/Player/Assets/AbilityIcons/MCSpin.png" id="1_jcm20"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_k7rrf"]
+
+[resource]
+script = ExtResource("1_k7rrf")
+actionName = "Spin"
+icon = ExtResource("1_jcm20")
+power = 35
+animation = 3
+multiTarget = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

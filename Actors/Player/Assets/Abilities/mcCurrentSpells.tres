@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="currentSpells" format=3 uid="uid://bt24te56vidgn"]
+
+[ext_resource type="Script" uid="uid://bjqsnsooe61ti" path="res://Combat System/Combat Actions/spellSet.gd" id="1_2t88j"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_o3spe"]
+
+[resource]
+script = ExtResource("1_2t88j")
+metadata/_custom_type_script = "uid://bjqsnsooe61ti"

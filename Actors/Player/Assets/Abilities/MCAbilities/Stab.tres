@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cbnu6lcr7s6vv"]
+
+[ext_resource type="Texture2D" uid="uid://crn4mw4a6nj1u" path="res://Actors/Player/Assets/AbilityIcons/MCStab.png" id="1_8dn72"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_ctri0"]
+
+[resource]
+script = ExtResource("1_ctri0")
+actionName = "Thrust"
+icon = ExtResource("1_8dn72")
+power = 60
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

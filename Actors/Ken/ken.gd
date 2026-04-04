@@ -1,3 +1,3 @@
-extends Combatant
+extends playerControlled
 
 @export var charName: String = "Ken"

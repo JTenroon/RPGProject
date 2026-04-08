@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://b6gb1lytv4los"]
+
+[ext_resource type="Texture2D" uid="uid://c6engtx24p2i8" path="res://Assets/Spells/Flame/Flame.png" id="1_oe6rq"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_vf6o3"]
+
+[resource]
+script = ExtResource("1_vf6o3")
+actionName = "Flame"
+icon = ExtResource("1_oe6rq")
+power = 50
+mpCost = 2
+animation = 1
+isMagic = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

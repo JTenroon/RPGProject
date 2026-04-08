@@ -9,6 +9,7 @@ var currentHP: int
 var currentMP: int
 var ATB: int
 var ATBMax: int = 500
+var isActive: bool = false
 
 func _ready() -> void:
 
@@ -21,9 +22,8 @@ func addATB() -> void:
 	if isDead:
 		return
 
-	if ATB >= ATBMax:
+	if ATB >= ATBMax && !isActive:
 		_chooseAction()
-		ATB = 0
 
 	elif ATB < ATBMax:
 		ATB += stats.SPD
@@ -33,11 +33,9 @@ func _chooseAction() -> void:
 
 func takeDamage(damage: int) -> void:
 	currentHP -= damage
-	
+	print(self.name, " has ", currentHP, "HP left!")
 	if currentHP <= 0:
 		currentHP = 0
 		
 		isDead = true
 		CombatManager.checkScore()
-
-	print(self.name, " has ", currentHP, "HP left!")

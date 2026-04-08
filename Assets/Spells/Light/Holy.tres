@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://btf7jlvr11wqi"]
+
+[ext_resource type="Texture2D" uid="uid://bqs5xfnpu4udv" path="res://Assets/Spells/Light/Holy.png" id="1_l2njr"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_l8ab8"]
+
+[resource]
+script = ExtResource("1_l8ab8")
+actionName = "Holy"
+icon = ExtResource("1_l2njr")
+power = 70
+mpCost = 4
+animation = 1
+isMagic = true
+element = 9
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

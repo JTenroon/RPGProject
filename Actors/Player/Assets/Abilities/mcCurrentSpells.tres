@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="currentSpells" format=3 uid="uid://bt24te56vidgn"]
+[gd_resource type="Resource" script_class="spellSet" format=3 uid="uid://bt24te56vidgn"]
 
-[ext_resource type="Script" uid="uid://bjqsnsooe61ti" path="res://Combat System/Combat Actions/spellSet.gd" id="1_2t88j"]
 [ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_o3spe"]
+[ext_resource type="Resource" uid="uid://btf7jlvr11wqi" path="res://Assets/Spells/Light/Holy.tres" id="2_yd53d"]
+[ext_resource type="Resource" uid="uid://cjth8icixwwau" path="res://Assets/Spells/Bolt/Bolt.tres" id="3_wti7h"]
+[ext_resource type="Resource" uid="uid://cgkwm40ndutmg" path="res://Assets/Spells/Heal/Heal.tres" id="4_7xynq"]
+[ext_resource type="Script" uid="uid://bjqsnsooe61ti" path="res://Combat System/Combat Actions/spellSet.gd" id="5_pff13"]
 
 [resource]
-script = ExtResource("1_2t88j")
+script = ExtResource("5_pff13")
+list = Array[ExtResource("1_o3spe")]([ExtResource("2_yd53d"), ExtResource("3_wti7h"), ExtResource("4_7xynq")])
 metadata/_custom_type_script = "uid://bjqsnsooe61ti"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cjth8icixwwau"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_kd136"]
+[ext_resource type="Texture2D" uid="uid://cfxu475xdnego" path="res://Assets/Spells/Bolt/Bolt.png" id="1_l5aah"]
+
+[resource]
+script = ExtResource("1_kd136")
+actionName = "Bolt"
+icon = ExtResource("1_l5aah")
+power = 50
+mpCost = 2
+speed = 1.0
+animation = 1
+isMagic = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cgkwm40ndutmg"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_kmut7"]
+[ext_resource type="Texture2D" uid="uid://b0gbcwen7x6mf" path="res://Assets/Spells/Heal/Heal.png" id="1_otvq6"]
+
+[resource]
+script = ExtResource("1_kmut7")
+actionName = "Heal"
+icon = ExtResource("1_otvq6")
+power = -50
+mpCost = 4
+animation = 1
+isMagic = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

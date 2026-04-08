@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cwsqljh0nwhp3"]
+
+[ext_resource type="Texture2D" uid="uid://crhlj2chducxv" path="res://Assets/Spells/Weird/Channel.png" id="1_bijfx"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_dsakw"]
+
+[resource]
+script = ExtResource("1_dsakw")
+actionName = "Channel"
+icon = ExtResource("1_bijfx")
+power = 50
+mpCost = 2
+animation = 1
+isMagic = true
+element = 8
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

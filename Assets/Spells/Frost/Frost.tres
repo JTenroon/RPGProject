@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://dudcq2y86jiv3"]
+
+[ext_resource type="Texture2D" uid="uid://bd11xeldaaa86" path="res://Assets/Spells/Frost/Frost.png" id="1_i7qnq"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_rjbsf"]
+
+[resource]
+script = ExtResource("1_rjbsf")
+actionName = "Frost"
+icon = ExtResource("1_i7qnq")
+power = 50
+mpCost = 2
+animation = 1
+multiTarget = true
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

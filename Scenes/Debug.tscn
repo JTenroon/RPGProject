@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bjr731y6usv0b"]
 
 [ext_resource type="PackedScene" uid="uid://beyeq37qyobrm" path="res://Actors/Player/Player.tscn" id="1_rwhvy"]
-[ext_resource type="PackedScene" uid="uid://xs3hkwiec83j" path="res://Actors/Ken/ken.tscn" id="2_8koso"]
 [ext_resource type="PackedScene" uid="uid://cw06olirlogb3" path="res://Actors/Monsters/Rock Lizard/rockLizard.tscn" id="3_pr2ys"]
 [ext_resource type="PackedScene" uid="uid://c76r56rcpk8vi" path="res://Assets/UI/Panel/menu_box.tscn" id="4_xmg8h"]
 [ext_resource type="Script" uid="uid://bnmfab81hygio" path="res://Assets/UI/Panel/DialogueBox.gd" id="5_i37fb"]
@@ -12,17 +11,13 @@ y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=493676502 instance=ExtResource("1_rwhvy")]
 y_sort_enabled = true
-position = Vector2(51, 117)
+position = Vector2(70, 74)
 moveSpeed = 80.0
 pointerLength = 25.0
 
 [node name="Rock Lizard" parent="." unique_id=1790967525 instance=ExtResource("3_pr2ys")]
 y_sort_enabled = true
 position = Vector2(243, 66)
-
-[node name="Ken" parent="." unique_id=1833336018 instance=ExtResource("2_8koso")]
-y_sort_enabled = false
-position = Vector2(95, 119)
 
 [node name="MenuBox" parent="." unique_id=757647628 instance=ExtResource("4_xmg8h")]
 visible = false

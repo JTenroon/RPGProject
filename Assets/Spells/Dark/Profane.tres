@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://c52gq6dnsrckf"]
+
+[ext_resource type="Texture2D" uid="uid://bvbv4301w7qae" path="res://Assets/Spells/Dark/Profane.png" id="1_s07k6"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_xxisk"]
+
+[resource]
+script = ExtResource("1_xxisk")
+actionName = "Profane"
+icon = ExtResource("1_s07k6")
+power = 50
+mpCost = 2
+element = 10
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

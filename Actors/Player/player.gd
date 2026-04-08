@@ -34,9 +34,6 @@ func _physics_process(delta: float) -> void:
 	_updateContext()
 	_checkCollision()
 
-func _input(event: InputEvent) -> void:
-	pass
-
 func _handleInput() -> void:
 	
 	if Input.is_action_just_pressed("context"):
@@ -101,8 +98,9 @@ func _updateContext() -> void:
 
 	_pointer.target_position = _lastDir.normalized() * pointerLength
 	
-	if _pointer.is_colliding() && GameState.currentState == GameState.State.EXPLORE:
-		if _pointer.get_collider().is_in_group("talkable"):
+	var collider = _pointer.get_collider()
+	if _pointer.is_colliding() && collider!=null && GameState.currentState == GameState.State.EXPLORE:
+		if collider.is_in_group("talkable"):
 			talkIcon.show()
 	else:
 		talkIcon.hide()

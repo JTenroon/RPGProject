@@ -10,10 +10,13 @@ var currentState: State = State.EXPLORE
 signal stateChanged(newState: State)
 
 func enterState(newState: State) -> void:
+	print("entering state: ", newState, " from: ", currentState)
 	if currentState == newState:
+		print("same state, returning")
 		return
 	currentState = newState
 	emit_signal("stateChanged", newState)
+
 
 func exitCurrentState() -> void:
 	# Convenience method — always returns to EXPLORE.

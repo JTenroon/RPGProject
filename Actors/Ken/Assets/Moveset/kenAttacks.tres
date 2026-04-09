@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="attackSet" format=3 uid="uid://2nfnjclb0y17"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_25pq1"]
+[ext_resource type="Resource" uid="uid://bn30iia485yrt" path="res://Actors/Ken/Assets/Abilities/Slash.tres" id="2_bnwnh"]
+[ext_resource type="Script" uid="uid://b0bdyi41buih8" path="res://Combat System/Combat Actions/attackSet.gd" id="2_uq6lu"]
+[ext_resource type="Resource" uid="uid://1tws04wpmipq" path="res://Actors/Ken/Assets/Abilities/DoubleSlice.tres" id="3_ecikj"]
+[ext_resource type="Resource" uid="uid://co1eonxkjydk3" path="res://Actors/Ken/Assets/Abilities/Wave.tres" id="4_0ss8n"]
+
+[resource]
+script = ExtResource("2_uq6lu")
+list = Array[ExtResource("1_25pq1")]([ExtResource("2_bnwnh"), ExtResource("3_ecikj"), ExtResource("4_0ss8n")])
+metadata/_custom_type_script = "uid://b0bdyi41buih8"

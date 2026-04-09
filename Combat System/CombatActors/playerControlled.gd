@@ -10,11 +10,14 @@ extends Combatant
 
 
 enum combatState{INACTIVE, ROOT, ATTACK, MAGIC, ITEM, TARGET}
+enum LeftOrRight{LEFT,RIGHT}
 var _currentCombatState: combatState = combatState.INACTIVE
 
 var commandList: Array[Ability]
 var blocking: bool
+var isSelected: bool = false
 var action: combatAction = null
+var partyIndex: int
 
 func _ready() -> void:
 	
@@ -25,17 +28,33 @@ func _ready() -> void:
 	GameState.stateChanged.connect(_onStateChanged)
 	print("stateChanged connected: ", GameState.stateChanged.is_connected(_onStateChanged))
 
+func _chooseAction() -> void:
+	
+	isActive = true
+	_currentCombatState = combatState.ROOT
+	if CombatManager.getParty().filter(func(e): return e.isSelected).size() <= 0:
+		Select()
+	elif CombatManager.getParty().filter(func(e): return e.isSelected).size() > 0:
+		Deselect()
 
 func _input(event: InputEvent) -> void:
 
-	if isActive:
+#isActive checks for full ATBall
+#isSelected checks for if the player is the selected player
+	if isActive && isSelected && !isDead:
+		#cycle buttons. Chooses next playerC in the party array.
+		if event.is_action_pressed("shoulder_L"):
+			_cycle(LeftOrRight.LEFT)
+		if event.is_action_pressed("shoulder_R"):
+			_cycle(LeftOrRight.RIGHT)
+
+		#actual combat functionality. 
 		if event.is_action_pressed("face_right"):
 			match _currentCombatState:
 				combatState.ROOT:
 					_block()
 				combatState.ATTACK, combatState.MAGIC, combatState.ITEM, combatState.TARGET:
 					_menuBack()
-
 
 		if event.is_action_pressed("face_down"):
 			match _currentCombatState:
@@ -77,9 +96,27 @@ func _input(event: InputEvent) -> void:
 				combatState.TARGET:
 					_chooseTarget(2)
 
+func Select() -> void:
+	isSelected = true
+	combatUI.clearButtons()
+	combatUI.buildRoot()
+
+func Deselect() -> void:
+	isSelected = false
+	combatUI.clearButtons()
+	combatUI.openCursor()
+
 func addATB() -> void:
 	super()
 	_updateATBall()
+
+func _cycle(LorR: LeftOrRight):
+	
+	print("cycling")
+	if LeftOrRight.LEFT && CombatManager.getParty().size() > 1:
+		CombatManager.Select(partyIndex, -1)
+	if LeftOrRight.RIGHT && CombatManager.getParty().size() > 1:
+		CombatManager.Select(partyIndex, 1)
 
 func _block() -> void:
 
@@ -129,7 +166,7 @@ func _chooseMagic(index: int) -> void:
 	action.user = self
 	action.ability = spells.list[index]
 	_currentCombatState = combatState.TARGET
-	combatUI._clearButtons()
+	combatUI.clearButtons()
 	CombatManager.showTargets()
 
 func _chooseItem(index: int )-> void:
@@ -147,11 +184,16 @@ func _onCombatStarted(party:Array[Combatant]) -> void:
 
 func _executeAction() -> void:
 	CombatManager.addToQueue(action)
+	Deselect()
 	action = null
 	combatUI.cycleRestart()
 	CombatManager.hideTargets()
 	ATB = 0
 	isActive = false
+	
+func _die() -> void:
+	super()
+	
 
 func _onStateChanged(state: GameState.State) -> void:
 	print("state changed")
@@ -164,9 +206,3 @@ func _onStateChanged(state: GameState.State) -> void:
 
 func _updateATBall():
 	combatUI.updateATB(ATB)
-
-func _chooseAction() -> void:
-	
-	isActive = true
-	_currentCombatState = combatState.ROOT
-	combatUI.activateMenu()

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="spellSet" format=3 uid="uid://dbwbe7v6ts6la"]
+
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_bay6i"]
+[ext_resource type="Resource" uid="uid://c52gq6dnsrckf" path="res://Assets/Spells/Dark/Profane.tres" id="2_blxbx"]
+[ext_resource type="Script" uid="uid://bjqsnsooe61ti" path="res://Combat System/Combat Actions/spellSet.gd" id="2_d0ust"]
+[ext_resource type="Resource" uid="uid://dudcq2y86jiv3" path="res://Assets/Spells/Frost/Frost.tres" id="3_1l772"]
+[ext_resource type="Resource" uid="uid://b6gb1lytv4los" path="res://Assets/Spells/Flame/Flame.tres" id="4_2yf26"]
+
+[resource]
+script = ExtResource("2_d0ust")
+list = Array[ExtResource("1_bay6i")]([ExtResource("2_blxbx"), ExtResource("3_1l772"), ExtResource("4_2yf26")])
+metadata/_custom_type_script = "uid://bjqsnsooe61ti"

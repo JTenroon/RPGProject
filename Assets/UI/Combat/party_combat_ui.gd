@@ -15,6 +15,7 @@ var offsets = {
 @export var magicIcon: Texture2D
 @export var itemIcon: Texture2D
 @export var defendIcon: Texture2D
+@export var cursorIcon: Texture2D
 
 @onready var ATBall: TextureProgressBar = $ATBall
 @onready var CombatTree: Node2D = $CombatTree
@@ -25,11 +26,12 @@ func updateATB(ATB: int) -> void:
 
 func activateMenu() -> void:
 	
-	ATBall.hide()
 	#eventually tween ATBall to center
 	buildRoot()
 	
 func buildRoot() -> void:
+
+	ATBall.hide()
 	#eventually all buttons start at center to tween out to positions
 	var magicButton: menuButton = button.instantiate()
 	CombatTree.add_child(magicButton)
@@ -53,7 +55,7 @@ func buildRoot() -> void:
 
 func openAbilities(abilities: Array[Ability]) -> void:
 	
-	_clearButtons()
+	clearButtons()
 	
 	#start from center to tween to positions
 	var bottomButton: menuButton = button.instantiate()
@@ -76,15 +78,23 @@ func openAbilities(abilities: Array[Ability]) -> void:
 	rightButton.init(backIcon)
 	rightButton.position = offsets["right"]
 
+func openCursor() -> void:
+	var cursorRect:TextureRect = TextureRect.new()
+	
+	cursorRect.texture = cursorIcon
+	CombatTree.add_child(cursorRect)
+	cursorRect.position = offsets["top"]
+	
+	
 func cycleRestart() -> void:
 
 	ATBall.show()
-	_clearButtons()
+	clearButtons()
 
 func menuBack() -> void:
-	_clearButtons()
+	clearButtons()
 	buildRoot()
 
-func _clearButtons() -> void:
+func clearButtons() -> void:
 	for child in CombatTree.get_children():
 		child.queue_free()

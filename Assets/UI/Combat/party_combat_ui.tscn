@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b8w3j01exoc67" path="res://Assets/UI/Combat/Combat Menu/Attack.png" id="5_ga23p"]
 [ext_resource type="Texture2D" uid="uid://ddxs2gia1jc6u" path="res://Assets/UI/Combat/Combat Menu/Magic.png" id="6_w1y0n"]
 [ext_resource type="Texture2D" uid="uid://c4en115t71sxg" path="res://Assets/UI/Combat/Combat Menu/Item.png" id="7_hx3jg"]
+[ext_resource type="Texture2D" uid="uid://c83p3pfogyqva" path="res://Assets/UI/Combat/Combat Menu/ActiveCursor.png" id="7_qslyh"]
 
 [node name="partyCombatUI" type="Control" unique_id=746529709]
 z_index = 10
@@ -23,6 +24,7 @@ attackIcon = ExtResource("5_ga23p")
 magicIcon = ExtResource("6_w1y0n")
 itemIcon = ExtResource("7_hx3jg")
 defendIcon = ExtResource("4_4sij8")
+cursorIcon = ExtResource("7_qslyh")
 
 [node name="ATBall" parent="." unique_id=204484381 instance=ExtResource("1_l2mpj")]
 layout_mode = 1

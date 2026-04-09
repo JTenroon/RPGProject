@@ -6,7 +6,7 @@
 script = ExtResource("1_quhin")
 baseMaxHP = 200
 baseATK = 200
-baseSPD = 40
+baseSPD = 20
 baseDEF = 200
 baseMDEF = 25
 level = 3

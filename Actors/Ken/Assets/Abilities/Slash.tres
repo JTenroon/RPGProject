@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bn30iia485yrt"]
+
+[ext_resource type="Texture2D" uid="uid://detwlyl23t5lo" path="res://Actors/Ken/Assets/Ability Icons/KenSlash.png" id="1_h347k"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_tksnv"]
+
+[resource]
+script = ExtResource("1_tksnv")
+actionName = "Slash"
+icon = ExtResource("1_h347k")
+power = 50
+speed = 1.0
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

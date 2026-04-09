@@ -13,6 +13,7 @@ var _pointer: RayCast2D
 var talkIcon: Sprite2D
 var examineIcon: Sprite2D
 
+
 # -- Internal state --
 var _inputDirection: Vector2 = Vector2.ZERO
 

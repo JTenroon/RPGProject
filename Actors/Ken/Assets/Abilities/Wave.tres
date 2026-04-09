@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://co1eonxkjydk3"]
+
+[ext_resource type="Texture2D" uid="uid://i7jlvhymqxjq" path="res://Actors/Ken/Assets/Ability Icons/KenWave.png" id="1_11haq"]
+[ext_resource type="Script" uid="uid://dby8cq5f32nhm" path="res://Combat System/Combat Actions/Ability.gd" id="1_bawpn"]
+
+[resource]
+script = ExtResource("1_bawpn")
+actionName = "Scythewave"
+icon = ExtResource("1_11haq")
+power = 50
+animation = 5
+metadata/_custom_type_script = "uid://dby8cq5f32nhm"

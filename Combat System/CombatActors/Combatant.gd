@@ -36,6 +36,8 @@ func takeDamage(damage: int) -> void:
 	print(self.name, " has ", currentHP, "HP left!")
 	if currentHP <= 0:
 		currentHP = 0
+		_die()
 		
-		isDead = true
-		CombatManager.checkScore()
+func _die() -> void:
+	isDead = true
+	CombatManager.checkScore()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c76r56rcpk8vi" path="res://Assets/UI/Panel/menu_box.tscn" id="4_xmg8h"]
 [ext_resource type="Script" uid="uid://bnmfab81hygio" path="res://Assets/UI/Panel/DialogueBox.gd" id="5_i37fb"]
 [ext_resource type="PackedScene" uid="uid://b5h47ullwckpx" path="res://Assets/UI/Combat/combat_menu.tscn" id="6_i37fb"]
+[ext_resource type="PackedScene" uid="uid://xs3hkwiec83j" path="res://Actors/Ken/ken.tscn" id="6_ykmub"]
 
 [node name="Node2D" type="Node2D" unique_id=1550104899]
 y_sort_enabled = true
@@ -25,3 +26,6 @@ script = ExtResource("5_i37fb")
 typewriterSpeed = 70.0
 
 [node name="CombatMenu" parent="." unique_id=1055183837 instance=ExtResource("6_i37fb")]
+
+[node name="Ken" parent="." unique_id=1833336018 instance=ExtResource("6_ykmub")]
+position = Vector2(118, 97)

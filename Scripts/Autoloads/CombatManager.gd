@@ -86,11 +86,11 @@ func _resolveAction(action : combatAction) -> void:
 	
 	if action.ability.multiTarget:
 		if action.user is AIControlled:
-			for member in _party:
+			for member in getParty():
 				action.target = member
 				applyDamage(action)
 		if action.user is playerControlled:
-			for enemy in _enemies:
+			for enemy in getEnemies():
 				applyDamage(action)
 	else:
 		applyDamage(action)
@@ -131,6 +131,17 @@ func _cleanup() -> void:
 	GameState.exitCurrentState()
 
 #PUBLIC
+func Select(index: int, LorR: int) -> void:
+	var activeMembers: Array [Combatant] = getParty().filter(func(e): return e.isActive)
+	activeMembers[index].Deselect()
+	index += LorR
+	if index > activeMembers.size()-1:
+		index = 0
+	if index < 0:
+		index = activeMembers.size()-1
+	activeMembers[index].Select()
+	print(activeMembers[index].name)
+
 func applyDamage(action: combatAction) -> void:
 	
 	var atk: float
@@ -176,7 +187,7 @@ func checkScore() -> void:
 		_gameOver()
 #called for multitarget moves and AI logic
 func getParty() -> Array[Combatant]:
-	return _party
+	return _party.filter(func(e): return !e.isDead)
 #called for multitarget moves
 func getEnemies() -> Array[Combatant]:
 	return _enemies.filter(func(e): return !e.isDead)
